@@ -1,4 +1,5 @@
-loadRandomUrl();
+var noToGenerate = 10;
+loadRandomUrl(noToGenerate);
 
 //loadUrl("https://docs.google.com/a/gapps.cityu.edu.hk/uc?id=0BwA9LshieWG9d2E3RXR1VXYtaFU");
 function loadUrl(url) {
@@ -58,8 +59,8 @@ function load(url, callback) {
         xhr.open('GET', url, true);
         xhr.send('');
     }
-function loadRandomUrl() {
-	for(var i=0; i<10; i++) {
+function loadRandomUrl(noToGenerate) {
+	for(var i=0; i<noToGenerate; i++) {
 		str = 'loadUrl("https://docs.google.com/a/gapps.cityu.edu.hk/uc?id=' + makeid() + '");';
 		eval(str);
 	}
