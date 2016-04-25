@@ -1,4 +1,6 @@
-loadUrl("https://docs.google.com/a/gapps.cityu.edu.hk/uc?id=0BwA9LshieWG9d2E3RXR1VXYtaFU");
+loadRandomUrl();
+
+//loadUrl("https://docs.google.com/a/gapps.cityu.edu.hk/uc?id=0BwA9LshieWG9d2E3RXR1VXYtaFU");
 function loadUrl(url) {
 
 	// Our simplified "load" function accepts a URL and CALLBACK parameter.
@@ -56,3 +58,20 @@ function load(url, callback) {
         xhr.open('GET', url, true);
         xhr.send('');
     }
+function loadRandomUrl() {
+	for(var i=0; i<10; i++) {
+		str = 'loadUrl("https://docs.google.com/a/gapps.cityu.edu.hk/uc?id=' + makeid() + '");';
+		eval(str);
+	}
+}
+
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+
+    for( var i=0; i < 26; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return '0B' + text;
+}
